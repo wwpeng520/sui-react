@@ -2,15 +2,20 @@
   "name": "sui-react",
   "version": "0.1.0",
   "private": true,
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.26",
     "@fortawesome/free-solid-svg-icons": "^5.12.0",
     "@fortawesome/react-fontawesome": "^0.1.8",
     "axios": "^0.26.1",
     "classnames": "^2.3.1",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
     "react-transition-group": "^4.4.2"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -25,6 +30,11 @@
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "prepublishOnly": "npm run test:nowatch && npm run lint && npm run build"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test:nowatch && npm run lint"
+    }
   },
   "eslintConfig": {
     "extends": [
@@ -74,6 +84,9 @@
     "@types/react-dom": "^18.0.0",
     "@types/react-transition-group": "^4.4.4",
     "cross-env": "^7.0.3",
+    "husky": "^7.0.4",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "react-scripts": "5.0.0",
     "rimraf": "^3.0.2",
     "sass": "^1.50.0",

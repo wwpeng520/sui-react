@@ -1,9 +1,9 @@
 language: node_js
 node_js:
-  - "stable"
+  - 'stable'
 cache:
   directories:
-  - node_modules
+    - node_modules
 env:
   - CI=true
 script:
@@ -14,6 +14,4 @@ deploy:
   github_token: $github_token
   local_dir: storybook-static
   on:
-    branch: master
-  
-  
+    branch: main
